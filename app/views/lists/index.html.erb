@@ -1,0 +1,25 @@
+<%= render "components/header" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2luZW1hfGVufDB8fDB8fA%3D%3D&w=1000&q=80');">
+  <div class="container">
+    <h1>Save any kind of movie</h1>
+    <p>Classic</p>
+  </div>
+</div>
+<div class="container mt-5 mb-5">
+<div class="alert position-relative alert-dark alert-dismissible fade show d-flex justify-content-between align-items-center mt-5" style="margin-top:-30px" role="alert">
+  <div><strong>Hey!</strong> Take a look to your lists!</div>
+  <%= link_to "Add a new list", new_list_path, class: "btn btn-dark align-self-top" %>
+</div>
+<div class="d-flex flex-wrap justify-content-center">
+<% @lists.each do |list| %>
+<div class="card m-3" style="width: 18rem;">
+  <div class="card-body" style="background-color: #DCDCDC">
+    <h2 class="card-title"><%= list.name %></h2>
+    <br>
+    <%= link_to "List movies", list_path(list), class: "btn btn-dark align-self-top" %>
+    <%= link_to "Edit", edit_list_path(list), class: "btn btn-warning align-self-top" %>
+  </div>
+</div>
+<% end %>
+</div>
+</div>
