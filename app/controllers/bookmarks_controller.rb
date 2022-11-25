@@ -21,7 +21,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to list_path(@bookmark.list)
+    redirect_to list_path(@bookmark.list), notice: "The bookmark was deleted succesfully."
   end
 
   def edit
@@ -33,7 +33,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update(bookmark_params)
-      redirect_to list_path(@list)
+      redirect_to list_path(@list), notice: "The bookmark was updated succesfully."
     else
       render :edit, status: :unprocessable_entity
     end
