@@ -4,6 +4,7 @@
 <div class="border p-3">
 <%= simple_form_for(@list) do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit class: 'btn btn-dark'  %>
 <% end %>
 <div class="alert position-relative alert-warning alert-dismissible fade show d-flex justify-content-between align-items-center m-5 mb-0" style="margin-top:-30px" role="alert">

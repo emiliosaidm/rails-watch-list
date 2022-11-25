@@ -13,7 +13,7 @@
 <div class="d-flex flex-wrap justify-content-center">
 <% @lists.each do |list| %>
 <div class="card m-3" style="width: 18rem;">
-  <div class="card-body" style="background-color: #DCDCDC">
+  <div class="card-body cover-background" style="background-image: url(<%= cl_image_path list.photo.key %>);">
     <h2 class="card-title"><%= list.name %></h2>
     <br>
     <%= link_to "List movies", list_path(list), class: "btn btn-dark align-self-top" %>
